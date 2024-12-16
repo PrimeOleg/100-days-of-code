@@ -14,10 +14,13 @@ selected_characters = ""
 
 for i in range(0, nr_letters):
     selected_characters += random.choice(letters)
+    
 for i in range(0, nr_symbols):
     selected_characters += random.choice(symbols)
+    
 for i in range(0, nr_numbers):
     selected_characters += random.choice(numbers)
+    
 print("Your password is (easy version):",selected_characters)
 
 # hard version continuation
@@ -25,10 +28,13 @@ selected_characters = []
 
 for i in range(0, nr_letters):
     selected_characters.append(random.choice(letters))
+    
 for i in range(0, nr_symbols):
     selected_characters.append(random.choice(symbols))
+    
 for i in range(0, nr_numbers):
     selected_characters.append(random.choice(numbers))
+    
 print(selected_characters)
 random.shuffle(selected_characters) # shuffle can only be done in place not assigned to variable
 print(selected_characters)
