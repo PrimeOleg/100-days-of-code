@@ -33,7 +33,7 @@ computer_choice = random.randint(0, 2)
 if player_choice < 3 and player_choice >= 0:
     print(f"You chose:\n{options[player_choice]}")
     print(f"Computer chose:\n{options[computer_choice]}")
-
+    # In the long term separate elif statements and player_choice > computer_choice would be better
     if (player_choice == 0 and computer_choice == 2 or
         player_choice == 1 and computer_choice == 0 or
         player_choice == 2 and computer_choice == 1):
@@ -44,4 +44,3 @@ if player_choice < 3 and player_choice >= 0:
         print("You lose!")
 else:
     print("Invalid option entered!")
-
