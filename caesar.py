@@ -10,12 +10,9 @@ def caesar(original_text, shift_amount, encode_or_decode):
 
     for letter in original_text:
         if letter.isalpha():
-            print(shift_amount)
             shifted_position = alphabet.index(letter) + shift_amount
             shifted_position %= len(alphabet)
             output_text += alphabet[shifted_position]
-            print(output_text)
-            print(shifted_position)
         else:
             output_text += letter
     print(f"Here is the {encode_or_decode}d result: {output_text}")
