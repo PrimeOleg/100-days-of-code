@@ -1,29 +1,33 @@
 from art import logo
 print(logo)
-# function for identifying the highest bidder
-def find_highest_bidder(bid_dictionary):
-    winner = ""
-    highest_bid = 0
 
-    for bidder in bid_dictionary:
-        bid_amount = bid_dictionary[bidder]
-        if bid_amount > highest_bid:
-            highest_bid = bid_amount
-            winner = bidder
+name = input("What is your name?: ")
+price = int(input("What is your bid?: $"))
+bids = {name:price}
 
-    print(f"The winner is {winner} with a bid of ${highest_bid}.")
+# function for locating the person with the highest bid
+# goes through each value in the dictionary and compares them to each other assigning
+# the highest bid and person's name to variables outside the for loop
+def highest_bidder(bids_dictionary):
+    highest_name = ""
+    highest_bidder_price = 0
+
+    for bidder in bids_dictionary:
+        if bids_dictionary[bidder] > highest_bidder_price: # if 100 > 0
+            highest_bidder_price = bids_dictionary[bidder] # highest_bidder_price = 100
+            highest_name = bidder # highest_name = jake
+    print(f"The winner is {highest_name} with a bid of ${highest_bidder_price}" )
 
 replay = False
-bids = {}
-
 while not replay:
-    name = input("What is your name?: ")
-    price = int(input("What is your bid?: $"))
-    bids[name] = price
+    yes_or_no = input("Are there any other bidders? Type 'yes' or 'no'.\n")
 
-    other_bidders = input("Are there any other bidders? Types 'yes' or 'no'.\n")
-    if other_bidders == 'yes':
+    if yes_or_no == 'yes':
         print("\n" * 20)
+        name = input("What is your name?: ")
+        price = int(input("What is your bid?: $"))
+        bids[name] = price
 
-    elif other_bidders == 'no':
-        find_highest_bidder(bids)
+    elif yes_or_no == 'no':
+        replay = True
+        highest_bidder(bids_dictionary=bids)
