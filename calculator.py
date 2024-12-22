@@ -2,7 +2,7 @@ from art import logo
 
 def add(n1, n2):
     return n1 + n2
-# TODO: Write out the other 3 function - subtract, multiply, divide
+    
 def subtract(n1, n2):
     return n1 - n2
 
@@ -19,6 +19,8 @@ operations = {"+": add,
 }
 
 def calculator():
+    """Function which will perform the calculation based on the user input of numbers
+    and their input of operations."""
     replay = True
     print(logo)
     number1 = float(input("What's the first number: "))
@@ -38,6 +40,6 @@ def calculator():
         else:
             replay = False
             print("\n" * 20)
-            calculator()
+            calculator() # recursive function - function calls itself
 
 calculator()
