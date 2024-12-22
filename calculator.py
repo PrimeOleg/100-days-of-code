@@ -19,21 +19,21 @@ operations = {"+": add,
 }
 
 def calculator():
-    print(logo)
-
     replay = True
+    print(logo)
     number1 = float(input("What's the first number: "))
 
-    while True:
+    while replay:
+        number2 = float(input("What's the next number: "))
         for operation in operations:
             print(operation)
-        operation = input(f"Enter operation: ")
-        number2 = float(input("What's the next number: "))
+        operation = input("Pick an operation: ")
         result = operations[operation](number1, number2)
-        print(f"{number1} + {number2} = {result}")
-        continue_with_previous = input(f"Type 'y' to continue with {result}, or type 'n' to start a new calculation: ")
+        print(f"{number1} {operation} {number2} = {result}")
 
-        if continue_with_previous == "y":
+        continue_with_previous_result = input(f"Type 'y' to continue with {result}, or type 'n' to start a new calculation: ")
+
+        if continue_with_previous_result == "y":
             number1 = result
         else:
             replay = False
