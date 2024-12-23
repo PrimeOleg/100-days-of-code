@@ -1,8 +1,9 @@
 import random
 from art import logo
 user = []
-computer = []
-
+computer = [] 
+# is_game_over Boolean can be used, based on this condition a check can be done to see if score = 0
+# save the user's score as variables
 def deal_card():
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     return random.choice(cards)
@@ -15,10 +16,10 @@ for i in range(2):
 def calculate_score(list_of_cards):
     score = sum(list_of_cards)
 
-    if list_of_cards[0] + list_of_cards[1] == 21:
+    if list_of_cards[0] + list_of_cards[1] == 21: # redo a better way exists, Hint use len() and sum()
         return 0
     else:
-        for card in list_of_cards:
+        for card in list_of_cards: # no need for a loop as mentioned before sum() and keyword in should work and checking the score should be done outside of this function
             if card == 11:
                 if score > 21:
                     list_of_cards.remove(11)
@@ -65,12 +66,13 @@ def game():
                     draw = False
             else:
                 draw = False
-                while calculate_score(computer) < 17:
+                while calculate_score(computer) < 17: # another condition is needed
                     computer.append(deal_card())
                 print(f"\tYour final hand: {user}, final score: {calculate_score(user)}")
                 print(f"\tComputer's final hand: {computer}, final score: {calculate_score(computer)}")
                 print(compare(calculate_score(user), calculate_score(computer)))
-
+# ALOT OF REDUNDANT LINES OF CODE WHICH CAN BE SIMPLIFIED AND BROKEN DOWN
+# can be changed as while input() instead of redundant lines
     if play_again == 'y':
         print("\n" * 20)
         user.clear()
