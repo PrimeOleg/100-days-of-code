@@ -2,13 +2,16 @@ from art import logo, game_over_logo, victory
 import random
 
 NUMBER = random.randint(1, 100)
+EASY_LEVEL = 10
+HARD_LEVEL = 5
 
 def game(difficulty):
     """Main game function that takes user's input of difficulty when the function is called."""
     if difficulty.lower() == "easy":
-        attempts = 10
+        attempts = EASY_LEVEL
     else:
-        attempts = 5
+        attempts = HARD_LEVEL
+
     # loop will run as long as user has attempts remaining
     game_over = False
     while not game_over:
